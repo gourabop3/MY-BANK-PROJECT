@@ -95,33 +95,46 @@ class RechargeService {
             await transaction.save({ session });
 
             // Simulate recharge processing (in real scenario, this would call operator API)
+            console.log(`🔄 Processing recharge for ${mobileNumber} with ${this.getOperatorName(operator)}`);
             const rechargeSuccess = await this.simulateRechargeProcessing(operator, mobileNumber, amount);
+            console.log(`📊 Recharge processing result: ${rechargeSuccess ? 'SUCCESS' : 'FAILED'}`);
 
             if (rechargeSuccess) {
+                console.log(`💳 Deducting ₹${amount} from account for transaction: ${recharge.transactionId}`);
+                
                 // Update account balance
-                await AccountModel.findByIdAndUpdate(
+                const accountUpdateResult = await AccountModel.findByIdAndUpdate(
                     account._id,
                     { $inc: { amount: -amount } },
-                    { session }
+                    { session, new: true }
                 );
+                
+                console.log(`✅ Amount deducted successfully. New balance: ₹${accountUpdateResult.amount}`);
 
                 // Update recharge status
                 recharge.status = 'success';
                 recharge.processedAt = new Date();
                 await recharge.save({ session });
+                console.log(`✅ Recharge status updated to success: ${recharge.transactionId}`);
 
                 // Update transaction status
                 transaction.isSuccess = true;
                 transaction.remark = `Mobile Recharge Successful - ${this.getOperatorName(operator)} - ${mobileNumber}`;
                 await transaction.save({ session });
+                console.log(`✅ Transaction status updated: ${recharge.transactionId}`);
 
                 // Commit transaction
                 await session.commitTransaction();
+                console.log(`✅ Database transaction committed for recharge: ${recharge.transactionId}`);
 
                 // Send notifications asynchronously
                 setImmediate(async () => {
                     try {
+                        console.log(`📧 Sending recharge notifications for transaction: ${recharge.transactionId}`);
                         const generatedAccountNumber = generateAccountNumber(user._id, account._id, account.ac_type);
+                        
+                        // Send email notification
+                        console.log(`📧 Sending email to: ${user.email}`);
                         await NotificationService.sendMobileRechargeEmail(
                             user.name,
                             user.email,
@@ -131,7 +144,10 @@ class RechargeService {
                             recharge.transactionId,
                             generatedAccountNumber
                         );
+                        console.log(`✅ Email sent successfully to: ${user.email}`);
 
+                        // Send SMS notification
+                        console.log(`📱 Sending SMS for recharge: ${recharge.transactionId}`);
                         await NotificationService.sendMobileRechargeSMS(
                             user.name,
                             mobileNumber,
@@ -140,15 +156,20 @@ class RechargeService {
                             recharge.transactionId,
                             mobileNumber // Send SMS to the recharged number
                         );
+                        console.log(`✅ SMS sent successfully for transaction: ${recharge.transactionId}`);
 
+                        // Create announcement
                         await NotificationService.createAnnouncement(
                             userId,
                             'mobile_recharge',
                             'Mobile Recharge Successful',
                             `₹${amount} recharge completed for ${mobileNumber} via ${this.getOperatorName(operator)}`
                         );
+                        console.log(`✅ All notifications sent successfully for transaction: ${recharge.transactionId}`);
+                        
                     } catch (notificationError) {
-                        console.error("Failed to send recharge notifications:", notificationError);
+                        console.error("❌ Failed to send recharge notifications:", notificationError);
+                        console.error("❌ Error details:", notificationError.stack);
                     }
                 });
 
