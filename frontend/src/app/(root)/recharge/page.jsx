@@ -89,9 +89,9 @@ const RechargePage = () => {
       plans: [
         { amount: 149, validity: '24 days', data: '1GB/day', description: 'Unlimited calls + SMS', cashback: '₹10' },
         { amount: 299, validity: '28 days', data: '2GB/day', description: 'Unlimited calls + SMS', cashback: '₹25' },
-        { amount: 399, validity: '56 days', data: '1.5GB/day', description: 'Unlimited calls + SMS', cashback: '₹40' },
-        { amount: 666, validity: '84 days', data: '1.5GB/day', description: 'Unlimited calls + SMS', cashback: '₹75' },
-        { amount: 999, validity: '84 days', data: '3GB/day', description: 'Unlimited calls + SMS', cashback: '₹120' }
+        { amount: 349, validity: '56 days', data: '1.5GB/day', description: 'Unlimited calls + SMS', cashback: '₹40' },
+        { amount: 599, validity: '84 days', data: '1.5GB/day', description: 'Unlimited calls + SMS', cashback: '₹75' },
+        { amount: 1499, validity: '200 days', data: '2.5GB/day', description: 'Unlimited calls + SMS', cashback: '₹120' }
       ]
     },
     { 
