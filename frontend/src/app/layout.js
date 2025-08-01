@@ -19,13 +19,13 @@ const PoppinsFont= Poppins({
 })
 
 export const metadata = {
-  title: "CBI Payment Gateway - Professional Banking Solution",
+  title: "SBI Payment Gateway - Professional Banking Solution",
   description: "Secure banking application with digital payment solutions, UPI transfers, and account management",
   other: {
     'format-detection': 'telephone=no',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'CBI Banking',
+    'apple-mobile-web-app-title': 'SBI Banking',
     'mobile-web-app-capable': 'yes',
     'msapplication-TileColor': '#3b82f6',
     'theme-color': '#3b82f6',

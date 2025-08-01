@@ -16,7 +16,7 @@ class SupportService {
     }
 
     // Enhanced system prompt for authenticated users
-    const enhancedSystemPrompt = `You are CBI Assistant, a helpful and intelligent customer support chatbot for Central Bank of India, created by Gourab.
+    const enhancedSystemPrompt = `You are SBI Assistant, a helpful and intelligent customer support chatbot for State Bank of India, created by Gourab.
 
     User Information:
     - User ID: ${user?.id || 'Unknown'}
@@ -103,7 +103,7 @@ class SupportService {
         messages: [
           {
             role: "system",
-            content: `You are CBI Assistant, a helpful and intelligent customer support chatbot for Central Bank of India, created by Gourab. 
+            content: `You are SBI Assistant, a helpful and intelligent customer support chatbot for State Bank of India, created by Gourab. 
 
             Developer Information:
             - Name: Gourab
@@ -112,7 +112,7 @@ class SupportService {
             - Location: West Bengal, India
 
             Your responsibilities:
-            - Provide accurate information about CBI Bank's digital banking services
+            - Provide accurate information about SBI Bank's digital banking services
             - Help customers with account management, transfers, ATM cards, mobile recharges, and KYC
             - Always be polite, professional, and solution-oriented
             - For complex issues, guide users to appropriate sections in their dashboard or suggest contacting branch
@@ -178,9 +178,9 @@ class SupportService {
     // Greeting responses
     if (message.includes('hello') || message.includes('hi') || message.includes('hey') || message.includes('good morning') || message.includes('good afternoon') || message.includes('good evening')) {
       const greetings = [
-        "Hello! Welcome to CBI Bank digital support. I'm your AI assistant created by Gourab. How can I help you with your banking needs today?",
-        "Hi there! I'm CBI Assistant, developed by Gourab to help you with all your banking queries. What would you like to know?",
-        "Greetings! I'm here to assist you with Central Bank of India services. How may I help you today?",
+        "Hello! Welcome to SBI Bank digital support. I'm your AI assistant created by Gourab. How can I help you with your banking needs today?",
+        "Hi there! I'm SBI Assistant, developed by Gourab to help you with all your banking queries. What would you like to know?",
+        "Greetings! I'm here to assist you with State Bank of India services. How may I help you today?",
       ];
       return greetings[Math.floor(Math.random() * greetings.length)];
     }
@@ -326,7 +326,7 @@ class SupportService {
       const personalizedGreetings = [
         `Hello ${userName}! Welcome back to CBI Bank. I'm your AI assistant created by Gourab. How can I help you with your banking needs today?`,
         `Hi ${userName}! Great to see you again. I'm CBI Assistant, developed by Gourab to help you with all your banking queries. What would you like to know?`,
-        `Greetings ${userName}! I'm here to assist you with Central Bank of India services. How may I help you today?`,
+        `Greetings ${userName}! I'm here to assist you with State Bank of India services. How may I help you today?`,
       ];
       return personalizedGreetings[Math.floor(Math.random() * personalizedGreetings.length)];
     }

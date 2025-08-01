@@ -157,9 +157,9 @@ const UPIPage = () => {
       errors.upi_id = 'UPI ID is required';
     } else {
       // UPI ID must end with @cbibank and have at least 2 chars before @
-      const upiRegex = /^[a-zA-Z0-9._-]{2,}@cbibank$/;
+              const upiRegex = /^[a-zA-Z0-9._-]{2,}@sbibank$/;
       if (!upiRegex.test(registrationForm.upi_id)) {
-        errors.upi_id = 'UPI ID must end with @cbibank (e.g., yourname@cbibank)';
+        errors.upi_id = 'UPI ID must end with @sbibank (e.g., yourname@sbibank)';
       }
     }
 
@@ -428,7 +428,7 @@ const UPIPage = () => {
           <div className="bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-full p-4 shadow-lg mb-4">
             <MdQrCode className="text-white text-5xl" />
           </div>
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">CBI Bank UPI</h1>
+                      <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">SBI Bank UPI</h1>
           <p className="text-lg text-gray-600 mb-2">Fast, Secure & Instant Payments</p>
         </div>
 
@@ -495,7 +495,7 @@ const UPIPage = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="example@cbibank"
+                    placeholder="example@sbibank"
                     className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     value={paymentForm.recipient_upi}
                     onChange={(e) => {

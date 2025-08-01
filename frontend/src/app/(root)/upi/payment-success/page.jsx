@@ -79,7 +79,7 @@ Date: ${formatDate(paymentDetails.timestamp)}
 Note: ${paymentDetails.note || 'No note provided'}
 Status: SUCCESS
 ================
-CBI Bank UPI Payment
+              SBI Bank UPI Payment
 Thank you for using our services!
     `;
 
@@ -96,7 +96,7 @@ Thank you for using our services!
   };
 
   const sharePayment = (platform) => {
-    const shareText = `✅ Payment Successful!\n💰 Amount: ${formatCurrency(paymentDetails.amount)}\n📱 UPI ID: ${paymentDetails.recipientUpi}\n🔢 Transaction ID: ${paymentDetails.transactionId}\n\nPowered by CBI Bank UPI`;
+    const shareText = `✅ Payment Successful!\n💰 Amount: ${formatCurrency(paymentDetails.amount)}\n📱 UPI ID: ${paymentDetails.recipientUpi}\n🔢 Transaction ID: ${paymentDetails.transactionId}\n\nPowered by SBI Bank UPI`;
     
     const shareUrls = {
       whatsapp: `https://wa.me/?text=${encodeURIComponent(shareText)}`,

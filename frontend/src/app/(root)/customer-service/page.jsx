@@ -31,8 +31,8 @@ export default function CustomerServicePage() {
       id: 1,
       sender: "bot",
       text: user 
-        ? `👋 Hello ${user.fullName || 'there'}! I'm CBI Assistant, your intelligent banking chatbot created by Gourab. I'm here to provide you personalized 24/7 banking support.\n\n👨‍💻 Developer: Gourab | Email: gourabmop@gmail.com | Mobile: +91 9263839602 | West Bengal, India\n\nI can assist you with account balance, money transfers, ATM cards, mobile recharge, KYC verification, and much more. How can I help you today?`
-        : "👋 Hello! I'm CBI Assistant, your intelligent banking chatbot created by Gourab. I'm here to help you 24/7 with all your banking needs.\n\n👨‍💻 Developer: Gourab | Email: gourabmop@gmail.com | Mobile: +91 9263839602 | West Bengal, India\n\nI can assist you with account balance, money transfers, ATM cards, mobile recharge, KYC verification, and much more. How can I help you today?",
+        ? `👋 Hello ${user.fullName || 'there'}! I'm SBI Assistant, your intelligent banking chatbot created by Gourab. I'm here to provide you personalized 24/7 banking support.\n\n👨‍💻 Developer: Gourab | Email: gourabmop@gmail.com | Mobile: +91 9263839602 | West Bengal, India\n\nI can assist you with account balance, money transfers, ATM cards, mobile recharge, KYC verification, and much more. How can I help you today?`
+        : "👋 Hello! I'm SBI Assistant, your intelligent banking chatbot created by Gourab. I'm here to help you 24/7 with all your banking needs.\n\n👨‍💻 Developer: Gourab | Email: gourabmop@gmail.com | Mobile: +91 9263839602 | West Bengal, India\n\nI can assist you with account balance, money transfers, ATM cards, mobile recharge, KYC verification, and much more. How can I help you today?",
       timestamp: new Date().toLocaleTimeString()
     }
   ]);
@@ -57,7 +57,7 @@ export default function CustomerServicePage() {
     "What services do you offer?",
     "How to open an account?",
     "ATM card information",
-    "About CBI Bank",
+    "About SBI Bank",
     "Contact developer"
   ];
 
@@ -264,7 +264,7 @@ export default function CustomerServicePage() {
                   <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white"></div>
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold text-lg">CBI Assistant - Live Chat Support</h3>
+                  <h3 className="text-white font-semibold text-lg">SBI Assistant - Live Chat Support</h3>
                   <p className="text-blue-100 text-sm">
                     {user 
                       ? `Hello ${user.fullName?.split(' ')[0] || 'User'} • Created by Gourab • Online`
