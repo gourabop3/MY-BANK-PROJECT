@@ -390,8 +390,12 @@ class RechargeService {
         // Simulate API call delay
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // 95% success rate simulation
-        return Math.random() > 0.05;
+        // For demo/testing purposes, always return success
+        // In production, this would integrate with actual operator APIs
+        return true;
+        
+        // Original random simulation (disabled for testing):
+        // return Math.random() > 0.05; // 95% success rate
     }
 
     /**
@@ -401,8 +405,12 @@ class RechargeService {
         // Simulate API call delay
         await new Promise(resolve => setTimeout(resolve, 1500));
         
-        // 98% success rate for bill payments
-        return Math.random() > 0.02;
+        // For demo/testing purposes, always return success
+        // In production, this would integrate with actual bill payment APIs
+        return true;
+        
+        // Original random simulation (disabled for testing):
+        // return Math.random() > 0.02; // 98% success rate
     }
 
     /**

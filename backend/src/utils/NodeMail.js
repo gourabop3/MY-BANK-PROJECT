@@ -10,10 +10,19 @@ const requiredEnvVars = [
 ];
 
 // Check if all required environment variables are set
+let smtpConfigured = true;
+const missingVars = [];
+
 for (const envVar of requiredEnvVars) {
     if (!process.env[envVar]) {
-        throw new Error("SMTP configuration incomplete – see backend/src/utils/NodeMail.js");
+        missingVars.push(envVar);
+        smtpConfigured = false;
     }
+}
+
+if (!smtpConfigured) {
+    console.warn(`⚠️  SMTP configuration incomplete. Missing: ${missingVars.join(', ')}`);
+    console.warn('📧 Email notifications will be logged to console instead');
 }
 
 const smtpPort = Number(process.env.EMAIL_SMTP_PORT);
