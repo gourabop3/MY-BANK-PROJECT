@@ -119,7 +119,7 @@ export default function RenGenerateModal({ onSuccess }) {
                   
                   <div className="mt-4">
                     <div className="w-full py-3 flex justify-center items-center mb-4">
-                      <img src="/logo.svg" alt="CBI Bank Logo" className='w-1/2 mx-auto' />
+                      <img src="/logo.svg" alt="SBI Bank Logo" className='w-1/2 mx-auto' />
                     </div> 
 
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">

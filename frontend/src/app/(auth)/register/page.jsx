@@ -25,7 +25,7 @@ const RegisterPage = () => {
 
       const appMetaTag = document.createElement('meta');
       appMetaTag.name = 'application-name';
-      appMetaTag.content = 'CBI Banking Registration';
+              appMetaTag.content = 'SBI Banking Registration';
       document.head.appendChild(appMetaTag);
 
       return () => {
@@ -89,14 +89,14 @@ const RegisterPage = () => {
           user-select: text;
         }
       `}</style>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 register-container" role="application" aria-label="CBI Banking Registration Application">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 register-container" role="application" aria-label="SBI Banking Registration Application">
         <div className="w-full max-w-lg" role="form" aria-label="Registration Form">
           {/* Header Section */}
           <div className="text-center mb-8" role="banner">
-            <div className="mx-auto w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-lg" role="img" aria-label="CBI Banking Logo">
+            <div className="mx-auto w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-lg" role="img" aria-label="SBI Banking Logo">
               <FaUserPlus className="text-white text-2xl" />
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-2" role="heading" aria-level="1">CBI Payment Gateway</div>
+            <div className="text-3xl font-bold text-gray-900 mb-2" role="heading" aria-level="1">SBI Payment Gateway</div>
             <div className="text-gray-600" role="text">Professional Banking Solution</div>
           </div>
 

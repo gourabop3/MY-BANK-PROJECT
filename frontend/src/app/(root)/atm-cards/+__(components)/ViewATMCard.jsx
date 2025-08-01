@@ -39,7 +39,7 @@ const ViewATMCard = () => {
         <div className="flex items-center gap-3">
           <span className="text-3xl">💳</span>
           <div className="text-left leading-tight">
-            <div className="text-xs font-semibold tracking-widest uppercase">CBI BANK</div>
+                          <div className="text-xs font-semibold tracking-widest uppercase">SBI BANK</div>
             <div className="card-title mt-0.5">DEBIT CARD</div>
           </div>
         </div>

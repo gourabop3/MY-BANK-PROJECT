@@ -76,7 +76,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            About CBI Payment Gateway
+                            About SBI Payment Gateway
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             A comprehensive digital banking platform built with modern technologies to provide secure, fast, and reliable financial services for the digital age.

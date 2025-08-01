@@ -12,7 +12,7 @@ const HeaderName = () => {
             <FaUniversity className="text-2xl text-white" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-gray-800">Central Bank of India</h1>
+            <h1 className="text-3xl font-bold text-gray-800">State Bank of India</h1>
             <p className="text-gray-600 text-sm">Digital Banking Dashboard</p>
           </div>
         </div>

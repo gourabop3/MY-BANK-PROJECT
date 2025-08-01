@@ -47,7 +47,7 @@ export const generateAccountNumber = (userId, accountId, accountType = 'savings'
  * @returns {string} - IFSC code
  */
 export const generateIFSCCode = (branchCode = '001234') => {
-  return `CBIN${branchCode}`; // Central Bank of India format
+      return `SBIN${branchCode}`; // State Bank of India format
 };
 
 /**

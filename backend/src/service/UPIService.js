@@ -66,9 +66,9 @@ class UPIService {
         }
 
         // Basic format validation
-        const upiRegex = /^[\w.-]+@cbibank$/;
+        const upiRegex = /^[\w.-]+@sbibank$/;
         if (!upiRegex.test(upi_id)) {
-            throw new ApiError(400, 'UPI ID must end with @cbibank');
+            throw new ApiError(400, 'UPI ID must end with @sbibank');
         }
 
         // Extract username part for better error messages
@@ -89,10 +89,10 @@ class UPIService {
             // Generate suggestions for alternative UPI IDs
             const baseName = username;
             const suggestions = [
-                `${baseName}${Math.floor(Math.random() * 100)}@cbibank`,
-                `${baseName}${new Date().getFullYear()}@cbibank`,
-                `${baseName}.${currentUser.name.toLowerCase().split(' ')[0]}@cbibank`,
-                `${currentUser.name.toLowerCase().replace(/\s+/g, '')}@cbibank`
+                            `${baseName}${Math.floor(Math.random() * 100)}@sbibank`,
+            `${baseName}${new Date().getFullYear()}@sbibank`,
+            `${baseName}.${currentUser.name.toLowerCase().split(' ')[0]}@sbibank`,
+            `${currentUser.name.toLowerCase().replace(/\s+/g, '')}@sbibank`
             ];
             
             throw new ApiError(400, `UPI ID "${upi_id}" is already taken. Try these suggestions: ${suggestions.slice(0, 2).join(', ')}`);
@@ -427,7 +427,7 @@ class UPIService {
                             </p>
                         </div>
                         
-                        <p>Thank you for using CBI Bank UPI services!</p>
+                        <p>Thank you for using SBI Bank UPI services!</p>
                         
                         <div style="text-align: center; margin-top: 30px;">
                             <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/upi/payment-success?transaction_id=${paymentDetails.transaction_id}&amount=${paymentDetails.amount}&recipient_upi=${paymentDetails.recipient_upi}&sender_upi=${paymentDetails.sender_upi}&note=${encodeURIComponent(paymentDetails.note || '')}&timestamp=${paymentDetails.timestamp.toISOString()}" 
@@ -438,7 +438,7 @@ class UPIService {
                         
                         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
                         <p style="color: #6b7280; font-size: 12px; text-align: center;">
-                            This is an automated email from CBI Bank UPI. Please do not reply to this email.
+                            This is an automated email from SBI Bank UPI. Please do not reply to this email.
                         </p>
                     </div>
                 </div>
@@ -483,20 +483,20 @@ class UPIService {
                 <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                     <h2 style="color: #2563eb; text-align: center;">Reset Your UPI PIN</h2>
                     <p>Dear ${user.name},</p>
-                    <p>We received a request to reset your UPI PIN for CBI Bank UPI (ID: <strong>${user.upi_id}</strong>).</p>
+                    <p>We received a request to reset your UPI PIN for SBI Bank UPI (ID: <strong>${user.upi_id}</strong>).</p>
                     <p>Please use the following One-Time Password (OTP) to reset your PIN. This OTP is valid for <strong>10 minutes</strong>.</p>
                     <div style="text-align: center; margin: 30px 0;">
                         <span style="font-size: 32px; font-weight: bold; color: #2563eb; background-color: #f0f9ff; padding: 15px 30px; border-radius: 10px; letter-spacing: 5px;">${otp}</span>
                     </div>
                     <p>If you did not initiate this request, please ignore this email or contact support immediately.</p>
                     <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
-                    <p style="color: #6b7280; font-size: 12px; text-align: center;">This is an automated email from CBI Bank. Please do not reply.</p>
+                    <p style="color: #6b7280; font-size: 12px; text-align: center;">This is an automated email from SBI Bank. Please do not reply.</p>
                 </div>
             </div>`;
 
         await NodeMailerService.sendEmail({
             to: user.email,
-            subject: 'CBI Bank – UPI PIN Reset OTP',
+            subject: 'SBI Bank – UPI PIN Reset OTP',
             html: emailHtml,
         });
 

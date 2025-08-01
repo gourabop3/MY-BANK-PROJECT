@@ -123,7 +123,7 @@ const BankingDetailsCard = ({ user }) => {
     accountNumber: user?.kyc_status === 'verified' ? accountNumber : '',
     formattedAccountNumber: formattedAccountNumber,
     ifscCode: generateIFSCCode(),
-    branchName: "Central Bank of India - Main Branch",
+          branchName: "State Bank of India - Main Branch",
     branchCode: "001234",
     accountType: primaryAccount ? getAccountTypeDisplayName(primaryAccount.ac_type) : "Savings Account"
   };

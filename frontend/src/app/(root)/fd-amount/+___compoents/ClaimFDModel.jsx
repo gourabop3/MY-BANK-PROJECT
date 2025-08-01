@@ -196,7 +196,7 @@ const ClaimFDModel = ({ id, methods }) => {
                                     
                                     <div className="mt-2">
                                         <div className="w-full py-3 flex justify-center items-center">
-                                            <img src="/logo.svg" alt="CBI Bank Logo" className='w-1/2 mx-auto' />
+                                            <img src="/logo.svg" alt="SBI Bank Logo" className='w-1/2 mx-auto' />
                                         </div> 
                                         
                                         {data ? (
