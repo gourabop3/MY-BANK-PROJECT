@@ -14,10 +14,10 @@ class NotificationService {
                 html: `
                     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
                         <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                            <div style="text-align: center; margin-bottom: 30px;">
-                                <h1 style="color: #2563eb; margin: 0;">CBI Bank</h1>
-                                <h2 style="color: #059669; margin: 10px 0;">Transfer Successful ✓</h2>
-                            </div>
+                                                    <div style="text-align: center; margin-bottom: 30px;">
+                            <h1 style="color: #2563eb; margin: 0;">SBI Bank</h1>
+                            <h2 style="color: #059669; margin: 10px 0;">Transfer Successful ✓</h2>
+                        </div>
                             
                             <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
                                 <h3 style="color: #1e40af; margin-top: 0;">Transaction Details</h3>
@@ -53,7 +53,7 @@ class NotificationService {
                             
                             <p style="color: #6b7280; font-size: 14px; text-align: center; margin-bottom: 0;">
                                 If you did not initiate this transfer, please contact us immediately.<br>
-                                This is an automated email from CBI Bank. Please do not reply.
+                                This is an automated email from SBI Bank. Please do not reply.
                             </p>
                         </div>
                     </div>
@@ -75,10 +75,10 @@ class NotificationService {
                 html: `
                     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
                         <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                            <div style="text-align: center; margin-bottom: 30px;">
-                                <h1 style="color: #2563eb; margin: 0;">CBI Bank</h1>
-                                <h2 style="color: #059669; margin: 10px 0;">Money Received! 💰</h2>
-                            </div>
+                                                    <div style="text-align: center; margin-bottom: 30px;">
+                            <h1 style="color: #2563eb; margin: 0;">SBI Bank</h1>
+                            <h2 style="color: #059669; margin: 10px 0;">Money Received! 💰</h2>
+                        </div>
                             
                             <div style="background-color: #f0fdf4; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
                                 <h3 style="color: #166534; margin-top: 0;">Credit Transaction Details</h3>
@@ -250,8 +250,8 @@ class NotificationService {
                             ` : ''}
                             
                             <p style="color: #6b7280; font-size: 14px; text-align: center; margin-bottom: 0;">
-                                Thank you for choosing CBI Bank for your investments.<br>
-                                This is an automated email from CBI Bank. Please do not reply.
+                                                Thank you for choosing SBI Bank for your investments.<br>
+                This is an automated email from SBI Bank. Please do not reply.
                             </p>
                         </div>
                     </div>
@@ -269,12 +269,12 @@ class NotificationService {
         try {
             await NodeMailerService.sendEmail({
                 to: userEmail,
-                subject: "Welcome to CBI Bank - Account Opened Successfully!",
+                subject: "Welcome to SBI Bank - Account Opened Successfully!",
                 html: `
                     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
                         <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                             <div style="text-align: center; margin-bottom: 30px;">
-                                <h1 style="color: #2563eb; margin: 0;">Welcome to CBI Bank! 🎉</h1>
+                                <h1 style="color: #2563eb; margin: 0;">Welcome to SBI Bank! 🎉</h1>
                                 <h2 style="color: #059669; margin: 10px 0;">Account Successfully Opened</h2>
                             </div>
                             
@@ -295,7 +295,7 @@ class NotificationService {
                                     </tr>
                                     <tr style="border-bottom: 1px solid #e5e7eb;">
                                         <td style="padding: 8px 0; font-weight: bold;">IFSC Code:</td>
-                                        <td style="padding: 8px 0; text-align: right; font-family: monospace;">CBIN001234</td>
+                                        <td style="padding: 8px 0; text-align: right; font-family: monospace;">SBIN001234</td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 8px 0; font-weight: bold;">Opening Date:</td>
@@ -317,8 +317,8 @@ class NotificationService {
                             </div>
                             
                             <p style="color: #6b7280; font-size: 14px; text-align: center; margin-bottom: 0;">
-                                Thank you for choosing CBI Bank. We're excited to serve you!<br>
-                                This is an automated email from CBI Bank. Please do not reply.
+                                                            Thank you for choosing SBI Bank. We're excited to serve you!<br>
+                            This is an automated email from SBI Bank. Please do not reply.
                             </p>
                         </div>
                     </div>
@@ -562,13 +562,13 @@ class NotificationService {
             
             await NodeMailerService.sendEmail({
                 to: userEmail,
-                subject: `${billTypeName} Successful - ₹${amount.toLocaleString()} | CBI Bank`,
+                subject: `${billTypeName} Successful - ₹${amount.toLocaleString()} | SBI Bank`,
                 html: `
                     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8fafc;">
                         <div style="background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
                             <!-- Bank Header -->
                             <div style="text-align: center; border-bottom: 2px solid #2563eb; padding-bottom: 20px; margin-bottom: 30px;">
-                                <h1 style="color: #2563eb; margin: 0; font-size: 28px;">Central Bank of India</h1>
+                                <h1 style="color: #2563eb; margin: 0; font-size: 28px;">State Bank of India</h1>
                                 <p style="color: #64748b; margin: 5px 0 0 0; font-size: 14px;">Digital Banking Services</p>
                             </div>
                             
@@ -613,7 +613,7 @@ class NotificationService {
                             <!-- ATM Card Info -->
                             <div style="background-color: #fef3c7; border: 1px solid #fbbf24; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
                                 <p style="margin: 0; color: #92400e; font-weight: bold;">
-                                    🏧 <strong>ATM Card Usage:</strong> This bill payment was processed using your CBI Bank ATM/Debit Card ending with ****${accountNumber}
+                                    🏧 <strong>ATM Card Usage:</strong> This bill payment was processed using your SBI Bank ATM/Debit Card ending with ****${accountNumber}
                                 </p>
                             </div>
                             
@@ -634,11 +634,11 @@ class NotificationService {
                             <!-- Footer -->
                             <div style="border-top: 1px solid #e5e7eb; padding-top: 20px; text-align: center;">
                                 <p style="color: #6b7280; font-size: 14px; margin: 0;">
-                                    Thank you for using CBI Bank Digital Services<br>
-                                    <strong>Customer Care:</strong> 1800-XXX-XXXX | <strong>Website:</strong> www.cbibank.com
+                                    Thank you for using SBI Bank Digital Services<br>
+                                    <strong>Customer Care:</strong> 1800-11-2211 | <strong>Website:</strong> www.sbi.co.in
                                 </p>
                                 <p style="color: #9ca3af; font-size: 12px; margin: 10px 0 0 0;">
-                                    This is an automated email from Central Bank of India. Please do not reply to this email.
+                                    This is an automated email from State Bank of India. Please do not reply to this email.
                                 </p>
                             </div>
                         </div>

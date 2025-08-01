@@ -39,13 +39,13 @@ class NodeMailerService {
             const info = await transporter.sendMail({
                 from: process.env.EMAIL_SMTP_FROM, // ✅ No duplication
                 to: email,
-                subject: "Verification Email - CBI Bank",
+                subject: "Verification Email - SBI Bank",
                 html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
                     <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                         <h2 style="color: #2563eb; text-align: center;">Email Verification</h2>
                         <p>Dear ${user},</p>
-                        <p>Thank you for using CBI Bank services. Please use the following OTP to verify your email address:</p>
+                                                  <p>Thank you for using SBI Bank services. Please use the following OTP to verify your email address:</p>
                         <div style="text-align: center; margin: 30px 0;">
                             <span style="font-size: 32px; font-weight: bold; color: #2563eb; background-color: #f0f9ff; padding: 15px 30px; border-radius: 10px; letter-spacing: 5px;">${otp}</span>
                         </div>
@@ -53,7 +53,7 @@ class NodeMailerService {
                         <p>If you didn't request this verification, please ignore this email.</p>
                         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
                         <p style="color: #6b7280; font-size: 12px; text-align: center;">
-                            This is an automated email from CBI Bank. Please do not reply to this email.
+                            This is an automated email from SBI Bank. Please do not reply to this email.
                         </p>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ class NodeMailerService {
                         </div>
                         <p>Thank you for banking with us!</p>
                         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
-                        <p style="color:#6b7280; font-size:12px; text-align:center;">This is an automated email from CBI Bank. Please do not reply.</p>
+                        <p style="color:#6b7280; font-size:12px; text-align:center;">This is an automated email from SBI Bank. Please do not reply.</p>
                     </div>
                 </div>
                 `

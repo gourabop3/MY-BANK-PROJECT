@@ -192,7 +192,7 @@ class SupportService {
 
     // Money Transfer queries
     if (message.includes('transfer') || message.includes('send money') || message.includes('neft') || message.includes('rtgs') || message.includes('imps')) {
-      return "CBI Bank offers multiple transfer options:\n\n💰 **IMPS** - Instant transfers (24/7)\n💰 **NEFT** - 2-4 hours processing\n💰 **RTGS** - Real-time (Min ₹2,00,000)\n\nTo transfer money:\n1. Go to 'Transfer' section\n2. Enter recipient account details\n3. Verify recipient information\n4. Enter amount and confirm\n\nAll transfers are secured with bank-grade encryption. Need help with a specific transfer type?";
+      return "SBI Bank offers multiple transfer options:\n\n💰 **IMPS** - Instant transfers (24/7)\n💰 **NEFT** - 2-4 hours processing\n💰 **RTGS** - Real-time (Min ₹2,00,000)\n\nTo transfer money:\n1. Go to 'Transfer' section\n2. Enter recipient account details\n3. Verify recipient information\n4. Enter amount and confirm\n\nAll transfers are secured with bank-grade encryption. Need help with a specific transfer type?";
     }
 
     // ATM Card queries

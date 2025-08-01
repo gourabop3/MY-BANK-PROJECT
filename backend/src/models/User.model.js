@@ -36,7 +36,7 @@ const schema = new mongoose.Schema({
         default:true
     },
 
-    // Unique UPI handle for the user (e.g., gourab@cbibank)
+    // Unique UPI handle for the user (e.g., gourab@sbibank)
     upi_id:{
         type:String,
         unique:true,
